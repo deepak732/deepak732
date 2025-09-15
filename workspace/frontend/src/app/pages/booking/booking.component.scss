@@ -1,0 +1,7 @@
+.container { max-width: 720px; margin: 2rem auto; padding: 0 1rem; }
+.form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form label { display: grid; gap: .25rem; font-size: .9rem; color: #444; }
+.form input { padding: .6rem .8rem; border: 1px solid #ddd; border-radius: .5rem; }
+.form button { grid-column: span 2; padding: .8rem 1rem; border: none; background: #3b82f6; color: white; border-radius: .5rem; }
+.message { margin-top: 1rem; }
+

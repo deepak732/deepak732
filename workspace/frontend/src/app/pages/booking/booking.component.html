@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Complete your booking</h1>
+  <form (ngSubmit)="submit()" class="form">
+    <label>Check-in <input type="date" [(ngModel)]="check_in" name="check_in" required /></label>
+    <label>Check-out <input type="date" [(ngModel)]="check_out" name="check_out" required /></label>
+    <label>Guests <input type="number" min="1" [(ngModel)]="guests" name="guests" required /></label>
+    <label>Name <input type="text" [(ngModel)]="customer_name" name="customer_name" required /></label>
+    <label>Email <input type="email" [(ngModel)]="customer_email" name="customer_email" required /></label>
+    <label>Phone <input type="text" [(ngModel)]="customer_phone" name="customer_phone" /></label>
+    <button type="submit">Book now</button>
+  </form>
+  <p class="message" *ngIf="message">{{ message }}</p>
+</div>
+
