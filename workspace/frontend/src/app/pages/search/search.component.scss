@@ -1,0 +1,7 @@
+.container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+.search-form { display: grid; grid-template-columns: repeat(6, 1fr); gap: .5rem; margin-bottom: 1rem; }
+.search-form input, .search-form button { padding: .6rem .8rem; border: 1px solid #ddd; border-radius: .5rem; }
+.results { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.hotel { display: grid; grid-template-columns: 240px 1fr; gap: 1rem; align-items: center; padding: 1rem; border: 1px solid #eee; border-radius: .75rem; }
+.hotel img { width: 240px; height: 140px; object-fit: cover; border-radius: .5rem; }
+

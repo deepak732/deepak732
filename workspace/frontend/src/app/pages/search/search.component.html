@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Find your hotel</h1>
+  <form (ngSubmit)="search()" class="search-form">
+    <input type="text" placeholder="City" [(ngModel)]="city" name="city" />
+    <input type="date" [(ngModel)]="check_in" name="check_in" />
+    <input type="date" [(ngModel)]="check_out" name="check_out" />
+    <input type="number" min="1" [(ngModel)]="guests" name="guests" placeholder="Guests" />
+    <input type="number" min="0" [(ngModel)]="min_price" name="min_price" placeholder="Min price" />
+    <input type="number" min="0" [(ngModel)]="max_price" name="max_price" placeholder="Max price" />
+    <button type="submit">Search</button>
+  </form>
+
+  <div *ngIf="loading()">Loading...</div>
+  <div class="results" *ngIf="!loading()">
+    <div class="hotel" *ngFor="let h of hotels()">
+      <img [src]="h.image_url || 'https://picsum.photos/seed/fallback/800/400'" alt="Hotel" />
+      <div>
+        <h2>{{ h.name }} <small>({{ h.city }})</small></h2>
+        <p>{{ h.description }}</p>
+        <button (click)="viewHotel(h.id)">View details</button>
+      </div>
+    </div>
+  </div>
+</div>
+

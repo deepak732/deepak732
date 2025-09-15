@@ -1,0 +1,24 @@
+<ng-container *ngIf="hotel() as h">
+  <div class="banner">
+    <img [src]="h.image_url || 'https://picsum.photos/seed/fallback/1200/400'" alt="Hotel" />
+    <div class="info">
+      <h1>{{ h.name }}</h1>
+      <p>{{ h.city }} • ⭐ {{ h.rating || 'N/A' }}</p>
+      <p>{{ h.description }}</p>
+    </div>
+  </div>
+
+  <h2>Rooms</h2>
+  <div class="rooms">
+    <div class="room" *ngFor="let r of h.rooms">
+      <img [src]="r.image_url || 'https://picsum.photos/seed/room/800/400'" alt="Room" />
+      <div>
+        <h3>{{ r.name }}</h3>
+        <p>Capacity: {{ r.capacity }} • ${{ r.price_per_night }} / night</p>
+        <p>Amenities: {{ r.amenities?.map(a => a.name).join(', ') }}</p>
+        <button (click)="book(r)">Book</button>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
